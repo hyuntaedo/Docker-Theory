@@ -3,8 +3,8 @@ Docker Theory
 
 ## 목차
 
-### [1. Docker](#docker)
-### [2. Docker Image](#docker-image)
+### [1.1 Container](#container)
+### [2.1 Docker Image](#docker-image)
 
 
 
