@@ -4,6 +4,7 @@ Docker Theory
 ## 목차
 
 ### [1. Docker](#docker)
+### [2. Docker Image](#docker-image)
 
 
 
