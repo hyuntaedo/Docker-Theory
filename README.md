@@ -104,17 +104,18 @@ Docker Theory
 
 ****
 ## 2.1. Docker Image
-* 큰제목: 문서 제목
+* Docker Image란?:
     ```
-    This is an H1
-    =============
+    컨테이너를 실행할 수 있는 실행파일, 설정 값들을 가지고 있는 것
+    Image를 Container에 할당하고 실행하면 해당 프로세스가 동작하는 원리
     ```
-    This is an H1
-    =============
-
-* 작은제목: 문서 부제목
-    ```
-    This is an H2
+    -------
+    ![image](https://user-images.githubusercontent.com/44853842/177481669-49c5c1c0-5463-4275-abbf-645230096ac8.png)
+    
+    1. Ubuntu Image를 만들기 위해 Layer A,B,C가 들어간다.
+    2. nginx Image를 만들기 위해서 Ubuntu  Image에 ngix Image가 추가
+    실질적으로 더 Ubuntu와 ngix Image가 더해진 것이지만 과정은 ubuntu + ngix가 더해진 것이다.
+    3. web Image를 만들려고 할 때 ubuntu Image에 nigix를 올린다음 web app을 올리는 것이 아닌 ngix base에 web app을 올려 이미지를 만든다. 
     -------------
     ```
     This is an H2
