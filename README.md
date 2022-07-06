@@ -104,11 +104,11 @@ Docker Theory
 
 ****
 ## 2.1. Docker Image
-* Docker Image란?:
-    ```
+* Docker Image란?
+    
     컨테이너를 실행할 수 있는 실행파일, 설정 값들을 가지고 있는 것
     Image를 Container에 할당하고 실행하면 해당 프로세스가 동작하는 원리
-    ```
+    
     -------
     ![image](https://user-images.githubusercontent.com/44853842/177481669-49c5c1c0-5463-4275-abbf-645230096ac8.png)
     
@@ -116,69 +116,26 @@ Docker Theory
     2. nginx Image를 만들기 위해서 Ubuntu  Image에 ngix Image가 추가
     실질적으로 더 Ubuntu와 ngix Image가 더해진 것이지만 과정은 ubuntu + ngix가 더해진 것이다.
     3. web Image를 만들려고 할 때 ubuntu Image에 nigix를 올린다음 web app을 올리는 것이 아닌 ngix base에 web app을 올려 이미지를 만든다. 
-    -------------
-    ```
-    This is an H2
-    -------------
 
-* 글머리: 1~6까지만 지원
-```
-# This is a H1
-## This is a H2
-### This is a H3
-#### This is a H4
-##### This is a H5
-###### This is a H6
-```
-# This is a H1
-## This is a H2
-### This is a H3
-#### This is a H4
-##### This is a H5
-###### This is a H6
-####### This is a H7(지원하지 않음)
+## 2.2. Docker File
+* Docker File 이란?
+    이미지 생성 출발점으로 이미지를 구성하기 위한 명령어들을 작성하여 이미지들을 구성할 수 있다.
+    그 뜻은 Docker File을 읽을 수 있다면 해당 이미지가 어떻게 구성되어있는지 알 수 있다.
+    
+## 2.3. Docker Hub & Registry
+* Docker Hub
+  1. Docker Hub에서는 Image를 저장하고 관리 해 준다. 또한 많은 회사들이 Docker를 Software로 배포를 하여 공개 이미지들을 공유가 가능하다.
+  2. Docker Hub 사용 시 Image를 docker pull하여 Container에 적용이 가능하다.
 
-## 2.2. BlockQuote
-이메일에서 사용하는 ```>``` 블럭인용문자를 이용한다.
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
-```
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
+* Docker Registry
+  1. Docker 보관소라고 생각하면 편함
+  2. 누구나 Image를 Push 또는 Download가 가능하다.
+  3. Docker Hub처럼 공개된 방식이 아닌 비공개 방식으로 저장소를 구축 가능하다.
+  
+ ![image](https://user-images.githubusercontent.com/44853842/177504400-e4b3c416-796e-4028-94c4-fbb61c435f4a.png)
 
-이 안에서는 다른 마크다운 요소를 포함할 수 있다.
-> ### This is a H3
-> * List
->	```
->	code
->	```
-
-## 2.3. 목록
-### ● 순서있는 목록(번호)
-순서있는 목록은 숫자와 점을 사용한다.
-```
-1. 첫번째
-2. 두번째
-3. 세번째
-```
-1. 첫번째
-2. 두번째
-3. 세번째
-
-**현재까지는 어떤 번호를 입력해도 순서는 내림차순으로 정의된다.**
-```
-1. 첫번째
-3. 세번째
-2. 두번째
-```
-1. 첫번째
-3. 세번째
-2. 두번째
-
-딱히 개선될 것 같지는 않다. 존 그루버가 신경안쓰고 있다고...
+  Docker Image Pull URL이다.
+  그림과 같이 앞에 있는 URL을 적지 않으면 Docker Hub에서 Image를 Pull 받게되고 URL을 적어준다면 사설 저장소에서 Image를 받을 수 있다.
 
 ### ● 순서없는 목록(글머리 기호: `*`, `+`, `-` 지원)
 ```
