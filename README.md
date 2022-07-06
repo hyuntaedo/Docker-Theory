@@ -142,48 +142,44 @@ Docker Theory
   Docker Image Pull URL이다.
   그림과 같이 앞에 있는 URL을 적지 않으면 Docker Hub에서 Image를 Pull 받게되고 URL을 적어준다면 사설 저장소에서 Image를 받을 수 있다.
 
-### ● 순서없는 목록(글머리 기호: `*`, `+`, `-` 지원)
-```
-* 빨강
-  * 녹색
-    * 파랑
+## 3.1 Docker Life Cycle
+  ### Image
+  ![image](https://user-images.githubusercontent.com/44853842/177508154-58f8e40d-b271-4b0d-9198-ff9f82cc9ab1.png)
+  
 
-+ 빨강
-  + 녹색
-    + 파랑
+## 3.2 Docker 명령어
+  ### 3.2.0 Docker Login 명령어 
+    `docker login[URL]` 
 
-- 빨강
-  - 녹색
-    - 파랑
-```
-* 빨강
-  * 녹색
-    * 파랑
+  ### 3.2.1 Docker 시작 명령어(Python) 
+    
+    `docker run -d -p 80:80 docker/getting-started` 
 
-+ 빨강
-  + 녹색
-    + 파랑
+  ### 3.2.2 Docker Pull Docker 
+    
+    `docker pull [옵션] 이미지명[:태그명]` 
+     
+  ### 3.2.3 Docker create 
+    
+    `docker create <옵션> 이미지명 <명령어> <인자>` 
+     
+  ### 3.2.4 Docker run
+    `docker run <옵션> 이미지명 <명령어> <인자>`
+    
+  ### 3.2.5 Docker stop
+    `docker stop <옵션> 컨테이너명 <컨테이너명...>`
+    
+  ### 3.2.6 Docker rm, rmi 
+    `docker rm`
+    `docker rmi`
+  
+  ### 3.2.7 Docker commit
+    `docker commit CONTAINER IMAGE_NAME`
+    
+  ### 3.2.8 Docker ps
+    `docker ps`
+    `docker ps -a`
 
-- 빨강
-  - 녹색
-    - 파랑
-
-혼합해서 사용하는 것도 가능하다(내가 선호하는 방식)
-
-```
-* 1단계
-  - 2단계
-    + 3단계
-      + 4단계
-```
-
-* 1단계
-  - 2단계
-    + 3단계
-      + 4단계
-
-## 2.4. 코드
-4개의 공백 또는 하나의 탭으로 들여쓰기를 만나면 변환되기 시작하여 들여쓰지 않은 행을 만날때까지 변환이 계속된다.
 
 ### 2.4.1. 들여쓰기
 ```
