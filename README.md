@@ -181,8 +181,34 @@ Docker Theory
     `docker ps -a`
 
 
-### 2.4.1. 들여쓰기
-```
+## 4.1 Docker Image가 저장되는 방식
+
+### 4.1.1 이전의 정리
+  1. Container : 서버의 실행에 필요한 모든것(코드, 런타임, 시스템도구)들을 Container에 넣어 쉽게 추상화하고 어디에서든(GCP,AWS,Local-Machine)에서 실행이 가능
+  2. Docker Image : Container의 모든 정보를 포함한 하나의 단위로 볼 수 있음
+  3. Docker를 사용하는 이유 : Container를 활용하여 쉽게 개발환경과 운영환경을 동일하게 구성 가능하기 때문
+  
+### 4.1.1 Docker Container를 동시에 여러개 생성하여 구동하려면 어떻게 해야하나?
+  1. docker run을 일일히 치기에는 너무 많으면 효율이 떨어진다.
+  2. docker-compose를 사용하면 한번에 여러개의 container를 정의하고 실행 시킬 수 있다.(yml파일)
+  
+### 4.1.2 Docker Image가 저장되는 방식
+`$ docker pull nginx:latest`
+`Using default tag: latest`
+`latest: Pulling from library/nginx`
+`c499e6d256d6: Already exists`
+`74cda408e262: Pull complete`
+`ffadbd415ab7: Pull complete`
+`Digest: sha256:282530fcb7cd19f3848c7b611043f82ae4be3781cb00105a1d593d7e6286b596`
+`Status: Downloaded newer image for nginx:latest`
+`docker.io/library/nginx:latest`
+
+  1. 이런식으로 분리된 데이터를 레이어 라고 한다.
+  2. 레이어는 Docker가 빌드 될 때 Dockerfile에 정의된 명령문(instructions)을 순서대로 실행하면서 만들어 진다.
+  3. 레이어들은 각각 독립적으로 저장되며 읽기전용이라 임의로 수정할 수 없다.
+  4. 실제로 레이어가 어떻게 저장되는지 확인 하려면 docker image inspect 명령어를 실행 후 hash값을 찾을 수 있다.
+  
+
 This is a normal paragraph:
 
     This is a code block.
