@@ -207,6 +207,20 @@ Docker Theory
   2. 레이어는 Docker가 빌드 될 때 Dockerfile에 정의된 명령문(instructions)을 순서대로 실행하면서 만들어 진다.
   3. 레이어들은 각각 독립적으로 저장되며 읽기전용이라 임의로 수정할 수 없다.
   4. 실제로 레이어가 어떻게 저장되는지 확인 하려면 docker image inspect 명령어를 실행 후 hash값을 찾을 수 있다.
+  5. 해시값으로 호스트 머신 내 어딘가 실제 레이너 내용이 저장된 것을 찾을 수 있다.
+
+### 4.1.3 결과물 저장 장소
+  ![image](https://user-images.githubusercontent.com/44853842/178099237-dafe698d-1eee-45f5-b938-f93422ad8918.png)
+
+
+## 4.2 Docker Image layer에 대하여
+  1. Docker Layer가 중요한 이유는 이미지를 빌드 할 때 마다 이미 생성된 레이어가 캐시되어 재사용 되기 때문에 빌드 시간을 단축 시킬수 있다.
+  2. DockerFile에서 모든 명령문이 레이어가 되는것은 아니다.
+  3. RUN, ADD, COPY 3가지만 레이어에 저장, CMD, LABEL, ENV< EXPOSE등과 같이 메타를 다루는 정보는 임시 레이어로써 도커 이미지사이즈에 영향을 주지 않음
+
+![image](https://user-images.githubusercontent.com/44853842/178099297-dae6296d-38b6-47ae-945e-894b24882521.png)
+
+  
   
 
 This is a normal paragraph:
